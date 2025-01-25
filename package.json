@@ -2,7 +2,7 @@
   "name": "igris-ui",
   "author": "Omkar Nath",
   "private": false,
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "exports": {
     ".": {
@@ -35,6 +35,8 @@
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.4",
+    "@pigment-css/react": "^0.0.30",
+    "@pigment-css/vite-plugin": "^0.0.30",
     "@storybook/addon-essentials": "^8.5.1",
     "@storybook/addon-interactions": "^8.5.1",
     "@storybook/addon-onboarding": "^8.5.1",
