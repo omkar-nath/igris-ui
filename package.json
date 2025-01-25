@@ -2,16 +2,21 @@
   "name": "igris-ui",
   "author": "Omkar Nath",
   "private": false,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
-  "main": "dist/main.js",
-  "types": "dist/main.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/lib/main.d.ts",
+      "default": "./dist/main.js"
+    }
+  },
   "files": [
-    "dist"
+    "dist",
+    "readme.md"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/igris-ui"
+    "url": "https://github.com/omkar-nath/igris-ui"
   },
   "sideEffects": [
     "**/*.css"
