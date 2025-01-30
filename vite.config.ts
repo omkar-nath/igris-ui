@@ -1,3 +1,4 @@
+/// <reference types="vitest" />
 import { defineConfig } from "vite";
 import { resolve } from "path";
 
@@ -9,6 +10,11 @@ import { pigment } from "@pigment-css/vite-plugin";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), pigment({}), libInjectCss(), dts({ include: ["lib"] })],
+  test: {
+    environment: "jsdom",
+    globals: true,
+    setupFiles: "./lib/__tests__/setupTests.ts",
+  },
   build: {
     copyPublicDir: false,
     minify: "esbuild",
