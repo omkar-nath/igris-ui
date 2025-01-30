@@ -2,7 +2,7 @@
   "name": "igris-ui",
   "author": "Omkar Nath",
   "private": false,
-  "version": "0.0.3",
+  "version": "0.0.6",
   "type": "module",
   "exports": {
     ".": {
@@ -62,5 +62,11 @@
     "vite": "^6.0.11",
     "vite-plugin-dts": "^4.5.0",
     "vite-plugin-lib-inject-css": "^2.0.1"
+  },
+  "dependencies": {
+    "@react-aria/button": "^3.11.1",
+    "@react-aria/focus": "^3.19.1",
+    "@react-aria/interactions": "^3.23.0",
+    "clsx": "^2.1.1"
   }
 }
