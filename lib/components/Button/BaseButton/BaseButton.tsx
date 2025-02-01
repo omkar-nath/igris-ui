@@ -8,7 +8,6 @@ import { clsx } from "clsx";
 const DEFAULT_BUTTON_TAG = "button";
 
 const baseButtonStyles = css({
-  textDecoration: "none",
   padding: "0.5rem",
   color: "inherit",
 });

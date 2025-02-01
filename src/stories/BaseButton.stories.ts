@@ -1,5 +1,5 @@
-import type { Meta, StoryObj, StoryFn } from "@storybook/react";
-import { BaseButton, BaseButtonProps } from "../../lib/main"; // Adjust the path based on your project structure
+import type { Meta, StoryObj } from "@storybook/react";
+import { BaseButton } from "../../lib/main.ts"; // Adjust the path based on your project structure
 
 // Metadata for the component
 const meta: Meta<typeof BaseButton> = {

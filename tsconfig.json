@@ -14,7 +14,12 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-
+      "paths": {
+      "@/*": ["./src/*"],
+      "@components/*": ["./lib/components/*"]
+ 
+    }
+,
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,

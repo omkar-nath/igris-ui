@@ -9,7 +9,7 @@ interface ButtonProps extends BaseButtonProps {
 }
 
 const StyledButton = styled(BaseButton)({
-  backgroundColor: "pink",
+  backgroundColor: "red",
   color: "black",
 });
 
