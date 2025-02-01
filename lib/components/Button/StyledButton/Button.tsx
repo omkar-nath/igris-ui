@@ -1,8 +1,8 @@
 import { forwardRef, ElementType } from "react";
 import { styled } from "@pigment-css/react";
 import { BaseButton, BaseButtonProps } from "../BaseButton/BaseButton";
+import { useTheme } from "@theme/context/theme";
 import { ButtonVariant } from "../types";
-
 const DEFAULT_BUTTON_TAG = "button";
 interface ButtonProps extends BaseButtonProps {
   variant?: ButtonVariant;
@@ -10,7 +10,8 @@ interface ButtonProps extends BaseButtonProps {
 
 const StyledButton = styled(BaseButton)({
   backgroundColor: "red",
-  color: "black",
+  borderRadius: "0.3rem",
+  color: "white",
 });
 
 const Button = forwardRef(
@@ -18,7 +19,16 @@ const Button = forwardRef(
     props: ButtonProps & React.ComponentPropsWithoutRef<TagName>,
     ref: React.Ref<HTMLButtonElement>,
   ) => {
-    return <StyledButton ref={ref} {...props} />;
+    const theme = useTheme();
+    console.log("Colors", theme);
+
+    return (
+      <StyledButton
+        style={{ backgroundColor: theme.colors.green[50] }}
+        ref={ref}
+        {...props}
+      />
+    );
   },
 );
 

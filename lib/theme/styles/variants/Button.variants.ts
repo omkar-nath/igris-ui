@@ -2,6 +2,10 @@ import { ButtonVariant } from "@components/Button/types";
 import { defaultColors } from "../../colors/defaultColors";
 
 export const buttonVariants: Record<ButtonVariant, Record<string, any>> = {
+  default: {
+    background: defaultColors.gray[10],
+    color: defaultColors.gray[140],
+  },
   primary: {
     background: defaultColors.blue[50],
     color: defaultColors.gray[0],

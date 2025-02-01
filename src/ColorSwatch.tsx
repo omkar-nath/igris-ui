@@ -8,28 +8,28 @@ type Props = {
 const Color = styled("div")({
   width: "100px",
   height: "100px",
+  display: "flex",
+  alignItems: "center",
   textAlign: "center",
-  paddingTop: "1rem",
+  justifyContent: "center",
+
+  borderRadius: "1rem",
 });
 
 const ColorDesc = styled("div")({
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "space-between",
-  gap: "3rem",
-  flexDirection: "column",
-
   fontFamily: "sans-serif",
+  display: "flex",
+  textTransform: "uppercase",
+  flexDirection: "column",
   fontSize: "14px",
 });
 
 const ColorSwatch = ({ name, value }: Props) => {
   return (
     <Color
-      style={{ backgroundColor: value, color: +name <= 60 ? "black" : "white" }}
+      style={{ backgroundColor: value, color: +name <= 50 ? "black" : "white" }}
     >
       <ColorDesc>
-        <strong> {name}</strong>
         <span>{value}</span>
       </ColorDesc>
     </Color>

@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { BaseButton } from "../../lib/main.ts"; // Adjust the path based on your project structure
+import { BaseButton, Button } from "../../lib/main.ts"; // Adjust the path based on your project structure
 
 // Metadata for the component
 const meta: Meta<typeof BaseButton> = {
   title: "Atoms/BaseButton",
-  component: BaseButton,
+  component: Button,
   parameters: {
     layout: "centered", // Centers the button in the Storybook canvas
   },

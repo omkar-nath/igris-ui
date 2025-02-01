@@ -20,6 +20,7 @@ export default defineConfig({
     alias: {
       "@": path.resolve(__dirname, "./lib/"),
       "@components": path.resolve(__dirname, "./lib/components/"),
+      "@theme": path.resolve(__dirname, "./lib/theme/"),
     },
   },
   build: {

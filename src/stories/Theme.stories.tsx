@@ -1,5 +1,13 @@
+import { styled } from "@pigment-css/react";
 import { defaultColors } from "../../lib/theme/colors/defaultColors";
+
 import ColorSwatch from "../ColorSwatch"; // Import the ColorSwatch component
+
+const Flex = styled("div")({
+  display: "flex",
+  flexWrap: "wrap",
+  gap: "1rem",
+});
 
 export default {
   title: "Design System/Colors",
@@ -16,7 +24,7 @@ const Template = () => {
         return (
           <div key={colorName}>
             <h3>{colorName}</h3>
-            <div style={{ display: "flex", flexWrap: "wrap" }}>
+            <Flex>
               {Object.keys(color).map((colorCode, index) => (
                 <ColorSwatch
                   name={`${colorCode}`}
@@ -24,7 +32,7 @@ const Template = () => {
                   key={`${colorName}-${colorCode}-${index}`}
                 />
               ))}
-            </div>
+            </Flex>
           </div>
         );
       })}

@@ -6,4 +6,5 @@ export type ButtonVariant =
   | "info"
   | "warning"
   | "outline"
-  | "ghost";
+  | "ghost"
+  | "default";
