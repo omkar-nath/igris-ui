@@ -1,6 +1,5 @@
 export type ButtonVariant =
   | "primary"
-  | "secondary"
   | "success"
   | "danger"
   | "info"
@@ -8,3 +7,5 @@ export type ButtonVariant =
   | "outline"
   | "ghost"
   | "default";
+
+export type ButtonSize = "sm" | "md" | "lg";

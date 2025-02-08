@@ -22,7 +22,7 @@ type Story = StoryObj<typeof BaseButton>;
 // Default button story
 export const Default: Story = {
   args: {
-    children: "Default Button",
+    children: "Click",
     autoFocus: true,
   },
 };

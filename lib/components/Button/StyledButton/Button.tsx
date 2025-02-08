@@ -1,18 +1,22 @@
 import { forwardRef, ElementType } from "react";
-import { styled } from "@pigment-css/react";
+import { cx } from "@linaria/core";
+
+import { styled } from "@linaria/react";
 import { BaseButton, BaseButtonProps } from "../BaseButton/BaseButton";
-import { useTheme } from "@theme/context/theme";
-import { ButtonVariant } from "../types";
+import { buttonSizes } from "@theme/styles/Button/variants";
+import { ButtonSize, ButtonVariant } from "../types";
+import { useTheme, Theme } from "@theme/context";
+
 const DEFAULT_BUTTON_TAG = "button";
+
+const StyledButton = styled(BaseButton) <{ theme: Theme }>`
+  background-color: ${({ theme }) => theme.colors.shades.gray[400]};
+  color: ${({ theme }) => theme.colors.shades.gray[50]};
+`;
 interface ButtonProps extends BaseButtonProps {
   variant?: ButtonVariant;
+  size?: ButtonSize;
 }
-
-const StyledButton = styled(BaseButton)({
-  backgroundColor: "red",
-  borderRadius: "0.3rem",
-  color: "white",
-});
 
 const Button = forwardRef(
   <TagName extends ElementType = typeof DEFAULT_BUTTON_TAG>(
@@ -20,14 +24,14 @@ const Button = forwardRef(
     ref: React.Ref<HTMLButtonElement>,
   ) => {
     const theme = useTheme();
-    console.log("Colors", theme);
 
     return (
       <StyledButton
-        style={{ backgroundColor: theme.colors.green[50] }}
+        theme={theme}
         ref={ref}
+        className={cx(buttonSizes["md"])}
         {...props}
-      />
+      ></StyledButton>
     );
   },
 );

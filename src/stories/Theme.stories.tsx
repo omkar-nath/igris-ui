@@ -1,13 +1,12 @@
-import { styled } from "@pigment-css/react";
+import { styled } from "@linaria/react";
 import { defaultColors } from "../../lib/theme/colors/defaultColors";
 
 import ColorSwatch from "../ColorSwatch"; // Import the ColorSwatch component
 
-const Flex = styled("div")({
-  display: "flex",
-  flexWrap: "wrap",
-  gap: "1rem",
-});
+const Flex = styled.div`
+  display: flex;
+  flexwrap: wrap;
+`;
 
 export default {
   title: "Design System/Colors",

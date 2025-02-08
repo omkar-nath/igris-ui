@@ -1,16 +1,26 @@
 /// <reference types="vitest" />
 import { defineConfig } from "vite";
+import wyw from "@wyw-in-js/vite";
 import path from "node:path";
 import { resolve } from "path";
 
 import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
 import { libInjectCss } from "vite-plugin-lib-inject-css";
-import { pigment } from "@pigment-css/vite-plugin";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), pigment({}), libInjectCss(), dts({ include: ["lib"] })],
+  plugins: [
+    react(),
+    wyw({
+      include: ["**/*.{ts,tsx}"],
+      babelOptions: {
+        presets: ["@babel/preset-typescript", "@babel/preset-react"],
+      },
+    }),
+    libInjectCss(),
+    dts({ include: ["lib"] }),
+  ],
   test: {
     environment: "jsdom",
     globals: true,

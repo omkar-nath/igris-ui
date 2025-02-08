@@ -1,16 +1,20 @@
 import React, { useRef, forwardRef, ElementType, ReactNode } from "react";
+import { css } from "@linaria/core";
 import { useFocusRing } from "@react-aria/focus";
 import { useHover } from "@react-aria/interactions";
 import { useButton } from "@react-aria/button";
-import { css } from "@pigment-css/react";
+
 import { clsx } from "clsx";
 
 const DEFAULT_BUTTON_TAG = "button";
 
-const baseButtonStyles = css({
-  padding: "0.5rem",
-  color: "inherit",
-});
+const baseButtonStyles = css`
+  padding: 0.5rem;
+  color: inherit;
+  outline: none;
+  border: none;
+  border-radius: 0.3rem;
+`;
 
 interface BaseButtonProps<
   TagName extends ElementType = typeof DEFAULT_BUTTON_TAG,
