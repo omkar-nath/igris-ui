@@ -27,6 +27,37 @@ export const Default: Story = {
   },
 };
 
+export const PrimaryButton: Story = {
+  args: {
+    children: "Hello",
+    variant: "primary",
+  },
+};
+
+export const SuccessButton: Story = {
+  args: {
+    children: "Success",
+    variant: "success",
+    size: "md",
+  },
+};
+
+export const DangerButton: Story = {
+  args: {
+    children: "Danger",
+    variant: "danger",
+    size: "md",
+  },
+};
+
+export const WarningButton: Story = {
+  args: {
+    children: "Warning",
+    variant: "warning",
+    size: "sm",
+  },
+};
+
 // Disabled button story
 export const Disabled: Story = {
   args: {
@@ -53,11 +84,11 @@ export const WithChildrenAsFunction: Story = {
     docs: {
       source: {
         code: `
-    <BaseButton>
+    <Button>
       {({ hover }: { hover: boolean }) => (
         <span>{hover ? "Hovered" : "Hover me"}</span>
       )}
-</BaseButton>
+</Button>
 `,
       },
     },

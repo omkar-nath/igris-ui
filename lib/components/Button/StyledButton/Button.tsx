@@ -1,18 +1,11 @@
 import { forwardRef, ElementType } from "react";
-import { cx } from "@linaria/core";
-
-import { styled } from "@linaria/react";
 import { BaseButton, BaseButtonProps } from "../BaseButton/BaseButton";
-import { buttonSizes } from "@theme/styles/Button/variants";
 import { ButtonSize, ButtonVariant } from "../types";
-import { useTheme, Theme } from "@theme/context";
+import { useTheme } from "@theme/context";
+import { sizeStyles, variantStyles } from "./styles";
 
 const DEFAULT_BUTTON_TAG = "button";
 
-const StyledButton = styled(BaseButton) <{ theme: Theme }>`
-  background-color: ${({ theme }) => theme.colors.shades.gray[400]};
-  color: ${({ theme }) => theme.colors.shades.gray[50]};
-`;
 interface ButtonProps extends BaseButtonProps {
   variant?: ButtonVariant;
   size?: ButtonSize;
@@ -23,15 +16,19 @@ const Button = forwardRef(
     props: ButtonProps & React.ComponentPropsWithoutRef<TagName>,
     ref: React.Ref<HTMLButtonElement>,
   ) => {
+    const { variant = "default", size = "sm" } = props;
     const theme = useTheme();
+    const variantClass = variantStyles()[variant];
+    const sizeClass = sizeStyles()[size];
 
     return (
-      <StyledButton
+      <BaseButton
         theme={theme}
+        size="md"
         ref={ref}
-        className={cx(buttonSizes["md"])}
+        className={`${variantClass} ${sizeClass}`}
         {...props}
-      ></StyledButton>
+      ></BaseButton>
     );
   },
 );

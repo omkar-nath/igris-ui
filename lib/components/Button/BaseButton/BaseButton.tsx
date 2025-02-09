@@ -9,11 +9,17 @@ import { clsx } from "clsx";
 const DEFAULT_BUTTON_TAG = "button";
 
 const baseButtonStyles = css`
-  padding: 0.5rem;
+  all: unset;
+  text-align: center;
+
   color: inherit;
   outline: none;
   border: none;
-  border-radius: 0.3rem;
+  border-radius: 0.4rem;
+`;
+
+const disabledStyles = css`
+  cursor: pointer;
 `;
 
 interface BaseButtonProps<
@@ -89,7 +95,11 @@ const BaseButton = forwardRef(
     return (
       <Component
         {...allButtonAttributes}
-        className={clsx(baseButtonStyles, className)}
+        className={clsx(
+          baseButtonStyles,
+          className,
+          !disabled ? disabledStyles : "",
+        )}
       >
         {typeof children === "function" ? children(renderProps) : children}
       </Component>
