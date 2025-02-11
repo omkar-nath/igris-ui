@@ -1,6 +1,6 @@
 import { forwardRef, ElementType } from "react";
 import { BaseButton, BaseButtonProps } from "../BaseButton/BaseButton";
-import { ButtonSize, ButtonVariant } from "../types";
+import { ButtonAppearance, ButtonSize, ButtonVariant } from "../types";
 import { useTheme } from "@theme/context";
 import { sizeStyles, variantStyles } from "./styles";
 
@@ -8,6 +8,7 @@ const DEFAULT_BUTTON_TAG = "button";
 
 interface ButtonProps extends BaseButtonProps {
   variant?: ButtonVariant;
+  appearance?: ButtonAppearance;
   size?: ButtonSize;
 }
 
@@ -16,9 +17,9 @@ const Button = forwardRef(
     props: ButtonProps & React.ComponentPropsWithoutRef<TagName>,
     ref: React.Ref<HTMLButtonElement>,
   ) => {
-    const { variant = "default", size = "sm" } = props;
+    const { variant = "default", size = "sm", appearance = "solid" } = props;
     const theme = useTheme();
-    const variantClass = variantStyles()[variant];
+    const variantClass = variantStyles()[variant][appearance];
     const sizeClass = sizeStyles()[size];
 
     return (
@@ -26,7 +27,7 @@ const Button = forwardRef(
         theme={theme}
         size="md"
         ref={ref}
-        className={`${variantClass} ${sizeClass}`}
+        className={`${variantClass}  ${sizeClass}`}
         {...props}
       ></BaseButton>
     );

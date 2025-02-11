@@ -29,8 +29,15 @@ export const Default: Story = {
 
 export const PrimaryButton: Story = {
   args: {
-    children: "Hello",
+    children: "Primary",
     variant: "primary",
+  },
+};
+
+export const SecondaryButton: Story = {
+  args: {
+    children: "Secondary",
+    variant: "secondary",
   },
 };
 
@@ -42,9 +49,18 @@ export const SuccessButton: Story = {
   },
 };
 
+export const InfoButton: Story = {
+  args: {
+    children: "Information",
+    variant: "info",
+    size: "md",
+  },
+};
+
 export const DangerButton: Story = {
   args: {
     children: "Danger",
+    disabled: true,
     variant: "danger",
     size: "md",
   },
