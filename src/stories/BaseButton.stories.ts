@@ -60,7 +60,6 @@ export const InfoButton: Story = {
 export const DangerButton: Story = {
   args: {
     children: "Danger",
-    disabled: true,
     variant: "danger",
     size: "md",
   },

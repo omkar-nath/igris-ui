@@ -17,13 +17,19 @@ const Button = forwardRef(
     props: ButtonProps & React.ComponentPropsWithoutRef<TagName>,
     ref: React.Ref<HTMLButtonElement>,
   ) => {
-    const { variant = "default", size = "sm", appearance = "solid" } = props;
+    const {
+      variant = "default",
+      size = "sm",
+      appearance = "solid",
+      ...rest
+    } = props;
     const theme = useTheme();
     const variantClass = variantStyles()[variant][appearance];
     const sizeClass = sizeStyles()[size];
 
     return (
       <BaseButton
+        {...rest}
         theme={theme}
         size="md"
         ref={ref}
